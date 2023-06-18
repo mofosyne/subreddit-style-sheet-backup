@@ -1,0 +1,246 @@
+/**** EXPERIMENTAL ********/
+
+/* For making ascii art look prettier 
+
+code {
+ display:inline-block; 
+ font-family:"Lucida Console", Monaco, monospace	;
+ letter-spacing: -0.2em;
+ line-height: 0.8em;
+ text-shadow: 0 0 5px rgba(10,10,10,0.5);
+}
+*/
+
+/*
+   What if the writer's name is a little harder to read (Hover to uncover yo!)
+   The objective as usual, to to encourage emphasis on content, and discussion, rather than ego.
+ */
+
+ .author { 
+    color: transparent !important;
+    text-shadow: 0 0 3px rgba(0,0,0,0.7);
+ 
+    transition:  color 2s ease-in-out;
+    transition:  text-shadow .25s ease-in-out;
+ 
+ }
+ 
+ .author:hover { 
+    color: black !important;
+    text-shadow: 0 0 1px rgba(0,0,0,0.5);
+ 
+    transition:  color 2s ease-in-out;
+    transition:  text-shadow .25s ease-in-out;
+ 
+ }
+ 
+ .author::after { 
+    color: transparent !important;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+ 
+    transition:  color .90s ease-in-out;
+    transition:  text-shadow .25s ease-in-out;
+ 
+ }
+ 
+ .author:hover::after { 
+    color: black !important;
+    text-shadow: 0 0 1px rgba(0,0,0,0.5);
+ 
+    transition:  color 2s ease-in-out;
+    transition:  text-shadow .25s ease-in-out;
+ 
+ }
+ 
+ /**************************/
+ 
+ #header-img {
+     height: auto;
+     width: 150px;
+     padding-left: 10px;
+     padding-top: 10px;
+ }
+ 
+ #header {
+     background: url(%%headerblurry%%);
+     background-size: auto auto;
+     background-position: 50% 0%;
+     height: 100%;
+     /* fix background */
+     background-attachment: fixed;
+ 
+     transition: background 1s ease-in-out;
+ 
+ }
+ 
+ #header:hover { 
+    background: url(%%header%%);
+    background-position: 50% 0%;
+    background-attachment: fixed;
+    transition: background 1s ease-in-out;
+ 
+ }
+ 
+ /* flairs */
+ 
+ .flair-troll {
+ 
+     content: url(%%37icon-troll-small%%); 
+     display: inline-block;
+     margin-right: 0 em;
+     padding: 0 0;
+     background: inherit;
+     color: inherit;
+     border: none;
+     border-radius: 0px;
+ 
+ 
+ }
+ 
+ .flair-pill {
+ 
+     content: url(%%pill-icon%%); 
+     display: inline-block;
+     margin-right: 0 em;
+     padding: 0 0;
+     background: inherit;
+     color: inherit;
+     border: none;
+     border-radius: 0px;
+ 
+ }
+ 
+ /* Make the subreddit name nicer */
+ 
+ #header .redditname a{
+     color: white;
+     font-size: 2em;
+     font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+     text-shadow: 3px 3px 20px #000;
+     font-weight:normal;
+     background-color: black;
+     background-color: rgba(0,0,0,0.4);
+     box-shadow: rgba(0,0,0,0.4) 0px 0px 10px 6px; 
+     border-top-right-radius: 10px;
+ }
+ 
+ 
+ /* Highlights philosophical text post that SOTS is known for*/
+ .content .self {
+     background-color: rgba(220,220,220,0.2);
+     box-shadow: 0 8px 10px -10px black;
+     border-top-right-radius: 10px;
+     width: auto;
+ }
+ 
+ /* Change the "readers" and "users here now" sidebar text*/
+ .subscribers .word {    display: none;    }  
+ .subscribers .number::after {    content: " mad sorcerers";    }
+ .users-online .word {    display: none;    }
+ .users-online .number::after {    content: " spectators here now";    }
+ 
+ /* Dark Mirror user stuff */
+ .author[href*="user/Dark_Mirrors"]{
+   font-size: 0pt;
+   visibility:hidden;
+ }
+ 
+ .author[href*="user/Dark_Mirrors"]::after{
+   font-size: 8pt;
+   content: "Mιѕє єη Aвумє";
+   color: black;
+   visibility:visible;
+ }
+ 
+ /* What if I don't exist? */
+ .author[href*="user/mofosyne"]{
+   font-size: 0pt;
+   visibility:hidden;
+ }
+ .author[href*="user/mofosyne"]::after{
+   font-size: 8pt;
+   content: "████████";
+   color: black;
+   visibility:visible;
+ }
+ 
+ /* No downvotes allowed */
+ .link .down { display: none; }
+ 
+ /* QR */
+ a[href="/qrTTS"]:after {     
+     display: inline-block;
+     width: 50px;
+     height: 50px;
+     margin-right: 5px;
+     content: "";
+     background: url(%%QRtoShoutboxTTS%%) no-repeat 0 0;
+     background-size: 100%;
+ }
+ 
+ /* Button link */
+ /*a[href="http://briankhuu.com/spectacle/shoutbox/shoutbox_TTS.html"] {
+   font: bold 1.5em Arial;
+   text-decoration: none;
+   background-color: #EFF7FF;
+   color: #333333;
+   padding: 2px 6px 2px 6px;
+   border-top: 1px solid #CCCCCC;
+   border-right: 1px solid #333333;
+   border-bottom: 1px solid #333333;
+   border-left: 1px solid #CCCCCC;
+   border-radius: 10px;
+ }
+ a[href="http://webchat.freenode.net/?channels=%23sots&uio=OT10cnVlJjExPTIzNg6b"] {
+   font: bold 1.5em Arial;
+   text-decoration: none;
+   background-color: #EFF7FF;
+   color: #333333;
+   padding: 2px 6px 2px 6px;
+   border-top: 1px solid #CCCCCC;
+   border-right: 1px solid #333333;
+   border-bottom: 1px solid #333333;
+   border-left: 1px solid #CCCCCC;
+   border-radius: 10px;
+ }*/
+ 
+ /* Autowikibot hover to display by /u/Dropping_fruits */
+ /* Code updates and discussion: http://redd.it/1vr0r2 */
+ 
+ .comment .md h5+h6+h4+p,.comment .md h5+h6+h4+p+hr,.comment .md h5+h6+h4+p+hr+blockquote,.comment .md h5+h6+h4+p+hr+blockquote+hr,.comment .md h5+h6+h4+p+hr+blockquote+hr+p,.comment .md h5+h6+h4+p+hr+blockquote+hr+p+p {
+     display: none;
+ }
+ 
+ .comment .md:hover h5+h6+h4+p,.comment .md:hover h5+h6+h4+p+hr,.comment .md:hover h5+h6+h4+p+hr+blockquote,.comment .md:hover h5+h6+h4+p+hr+blockquote+hr,.comment .md:hover h5+h6+h4+p+hr+blockquote+hr+p,.comment .md:hover h5+h6+h4+p+hr+blockquote+hr+p+p {
+     display: block;
+ }
+ 
+ .comment .md h5+h6+h4:after {
+     content: "Autowikibot post. Hover to view";
+ }
+ 
+ .comment .md:hover h5+h6+h4:after {
+ content: ""
+ }
+ 
+ .titlebox p, .titlebox ul li, .titlebox h1 {
+   font-family: "Georgia";
+   font-size: 110%;
+   line-height: 1.5em;
+ }
+ .titlebox p {
+   text-indent: 1em;
+ }
+ .titlebox p.users-online, .titlebox p.tagline {
+   /* undo the text-indent just applied */
+   text-indent: 0;
+ }
+ .titlebox ul {
+   padding-left: 1em;
+ }
+ .titlebox ul li {
+   color: #666;
+ }
+ .titlebox ul li:first-line {
+   color: black;
+ }

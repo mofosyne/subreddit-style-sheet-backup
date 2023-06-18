@@ -1,0 +1,125 @@
+---
+#All Links
+    type: link submission
+    comment_stickied: true
+    set_flair: "Needs Description"
+    ~domain: self.sorceryofthespectacle
+    comment: |
+        Links in Sorcery Of The Spectacle requires a small description, at least 100 words explaining how this relates to this subreddit. Note, any post to this comment will be automatically collapsed.
+
+        As a reminder, this is our subreddit description:
+        > [We exist in a culture of narrative and media that increasingly, willfully combines agency-robbing fantasy mythos with instantaneous technological dissemination—a self-mutating proteum of semantics: *the spectacle*.](https://www.reddit.com/r/SubredditDrama/comments/3dm0sp?context=10000 "We live in a culture that uses media to tell us how to live. Our culture purposefully creates fantasies that rob us of our freedom, and this is more effective with technology like the internet. This phenomenon is a self modifying cluster of symbols and signs that constantly change their meaning. 
+        --: Unpacked By /u/Nethodsod")
+
+---
+# Alert that this has been reported and will be removed on next report
+    moderators_exempt: false
+    reports: 1
+    comment: The above item has one report so far, given enough reports /u/{{author}} {{kind}} will be automatically removed. Invalid reports will be removed by the mod team. Don't be a dick.
+
+---
+# Remove anything that gets 1+ report and send modmail and it has no description
+    moderators_exempt: false
+    reports: 1
+    action: remove
+    comment: No description and this post got enough reports to be autoremoved. Moderator notified.
+    modmail: The above item was automatically removed due to receiving 1+ reports and no description. Please verify that this action was correct.
+    parent_submission:
+        flair_text: "Needs Description"
+
+---
+# Remove anything that gets 1+ report and send modmail and it has no description
+    author:
+        comment_karma: "< 1000"
+    moderators_exempt: false
+    reports: 1
+    ~domain: self.sorceryofthespectacle
+    action: remove
+    comment: User has relatively low karma and this post got enough reports to be autoremoved. Moderator notified.
+    modmail: The above item was automatically removed due to receiving 1+ reports and having relatively low karma
+
+---
+# Automatically remove any post with negative karma
+    author:
+        comment_karma: "< 0"
+    moderators_exempt: false
+    reports: 1
+    action: remove
+    comment: This got enough reports to be autoremoved. Moderator notified
+    modmail: The above item was automatically removed due to receiving 3+ reports and user has negative karma. Please verify that this action was correct.
+
+---
+# Automatically remove anything that gets 2+ reports and send modmail
+    moderators_exempt: false
+    reports: 2
+    action: remove
+    modmail: The above item was automatically removed due to receiving 2+ reports. Please verify that this action was correct.
+
+---
+# Troll Detected (Except if approved submitter)
+    author:
+        comment_karma: "< -50"
+        is_contributor: false
+    action: remove
+    reports: 1
+    modmail: Troll detected, removed his post
+
+---
+# Mod Drama Alert
+    author: [TotesMessenger, Totes_Meta_Bot]
+    body (regex): "\\[/r/(\\w+)\\] \\[(.+)\\]\\(http://np\\.(reddit\\.com/\\S+)\\b/\\)"
+    action: remove
+    modmail_subject: Meta Post
+    modmail: |
+        The following thread in /r/{{subreddit}} has been linked to in /r/{{match-body-2}}:
+
+        **Title:** [{{title}}]({{permalink}}&context=5)
+
+        **X-Post:** [{{match-body-3}}](http://{{match-body-4}})
+
+        ^(*Meta post detection by /u/{{author}}*)
+
+---
+# Short Post Removal
+#    type: comment
+#    body_shorter_than: 11
+#    is_top_level: true
+#    action: remove
+#    comment: Your message is too short, please elaborate.
+
+---
+# Remove Flair if OP post link description 
+# https://www.reddit.com/r/AutoModerator/comments/3xbli4/ability_to_check_if_op_has_commented_in_their_own/
+# https://www.reddit.com/r/AutoModerator/comments/b1uw1q/post_flair_checking/
+type: comment
+author:
+    is_submitter: true
+body_longer_than: 11
+parent_submission:
+    flair_text: "Needs Description"
+    set_flair: ""
+    overwrite_flair: true
+    action: approve
+---
+# Complain
+type: comment
+author:
+    is_submitter: false
+body_longer_than: 11
+parent_submission:
+    flair_text: "Needs Description"
+    set_flair: "Where is your description???????????????????????"
+    overwrite_flair: true
+    action: approve
+
+---
+# rm Flair if OP respond
+type: comment
+author:
+    is_submitter: true
+body_longer_than: 11
+parent_submission:
+    flair_text: "Where is your description???????????????????????"
+    set_flair: ""
+    overwrite_flair: true
+    action: approve
