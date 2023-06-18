@@ -1,0 +1,447 @@
+#header {
+    background-color: #e58ea8;
+    background-image: url(%%title%%), url(%%bg-static%%);
+    background-position: left 20px bottom 32px, center 19px;
+    background-repeat: no-repeat, repeat-x;
+    height: 186px;
+}
+
+#header-bottom-left {
+    height: 168px;
+    position: relative;
+}
+
+#header-bottom-left .tabmenu {
+    position: absolute;
+    left: 101px;
+    bottom: 2px;
+}
+
+.tabmenu li a {
+    padding: 2px 6px 2px 6px;
+    background-color: #f7e3e6;
+}
+
+#header-img.default-header {
+    position: absolute;
+    left: 27px;
+    bottom: -3px;
+    background-image: url(%%reddit-home-button%%);
+    background-position: center center;
+    height: 19px;
+    width: 71px;
+}
+
+#header .redditname {
+    display: block;
+    margin: -15px auto 0 auto;
+    background-image:
+        url(%%bg-00%%),
+        url(%%bg-01%%),
+        url(%%bg-02%%),
+        url(%%bg-03%%),
+        url(%%bg-04%%),
+        url(%%bg-05%%),
+        url(%%bg-06%%),
+        url(%%bg-07%%),
+        url(%%bg-08%%),
+        url(%%bg-09%%),
+        url(%%bg-10%%),
+        url(%%bg-11%%),
+        url(%%bg-12%%),
+        url(%%bg-13%%),
+        url(%%bg-14%%),
+        url(%%bg-15%%),
+        url(%%bg-16%%),
+        url(%%bg-17%%),
+        url(%%bg-18%%),
+        url(%%bg-19%%);
+    background-repeat: no-repeat;
+    height: 144px;
+    width: 300px;
+    animation: dance 13636ms steps(324) infinite;
+}
+
+@keyframes dance {
+    from {
+        background-position:
+            0 0,
+            15px 0,
+            30px 0,
+            45px 0,
+            60px 0,
+            75px 0,
+            90px 0,
+            105px 0,
+            120px 0,
+            135px 0,
+            150px 0,
+            165px 0,
+            180px 0,
+            195px 0,
+            210px 0,
+            225px 0,
+            240px 0,
+            255px 0,
+            270px 0,
+            285px 0;
+
+    }
+    to {
+        background-position:
+            0 -46656px,
+            15px -46656px,
+            30px -46656px,
+            45px -46656px,
+            60px -46656px,
+            75px -46656px,
+            90px -46656px,
+            105px -46656px,
+            120px -46656px,
+            135px -46656px,
+            150px -46656px,
+            165px -46656px,
+            180px -46656px,
+            195px -46656px,
+            210px -46656px,
+            225px -46656px,
+            240px -46656px,
+            255px -46656px,
+            270px -46656px,
+            285px -46656px;
+    }
+}
+
+#header .redditname {
+    color: transparent;
+}
+
+#header .redditname a {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 144px;
+    background: transparent;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+/* Prettyfy link list */
+.linklisting .link {
+    /*box-shadow: inset .1em .1em .5em hsl(0,0%,73%);*/
+    padding: 4px 6px;
+    margin: 3px 315px 8px 0;
+
+    -webkit-transition: box-shadow .2s;
+    transition: box-shadow .2s;
+}
+
+.linklisting .link:hover {
+    box-shadow: .1em .1em .5em hsl(0, 0%, 73%);
+}
+
+.arrow.upmod {
+    -webkit-transition: width 1s, ease, height 1s ease;
+    -moz-transition: width 1s, ease, height 1s, ease;
+    transition: width 1s, ease, height 1s, ease;
+    height: 30px;
+    width: 30px;
+
+    /* Do not add !important here. Or you break CSS3 animation in firefox*/
+    background-image: url(%%thumbs-up-sprite-sheet%%);
+    background-position: 0px, 0px;
+
+    /* For Chrome, Safari, and Opera browsers. */
+    -webkit-animation-name: gif-upvote-animation;
+    -webkit-animation-duration: 1.3s;
+    -webkit-animation-timing-function: steps(13);
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-play-state: running;
+
+    /* Standarized CSS3 animation Syntax *//*13 frames at 0.1s each SHOULD BE 14 FRAMES*/
+    animation-name: gif-upvote-animation;
+    animation-duration: 1.3s;
+    animation-timing-function: steps(13);
+    animation-iteration-count: 1;
+    animation-play-state: running;
+
+}
+
+.arrow.downmod {
+    -webkit-transition: width 1s, ease, height 1s ease;
+    -moz-transition: width 1s, ease, height 1s, ease;
+    transition: width 1s, ease, height 1s, ease;
+    height: 30px;
+    width: 30px;
+
+    /* Do not add !important here. Or you break CSS3 animation in firefox*/
+    background-image: url(%%thumbs-down-sprite-sheet%%);
+    background-position: 0px, 0px;
+
+    /*Webkit Animation*/
+    -webkit-animation-name: gif-downvote-animation;
+    -webkit-animation-duration: 1.92s;
+    -webkit-animation-timing-function: steps(15);
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-play-state: running;
+
+
+    /*Standardized CSS3 animation Syntax*/
+    animation-name: gif-downvote-animation;
+    animation-duration: 1.92s;
+    animation-timing-function: steps(15);
+    animation-iteration-count: 1;
+    animation-play-state: running;
+
+}
+
+
+/* Goes from right to left because that's how the sprite sheet was rendered*/
+/*@-moz-keyframes gif-upvote-animation {from {background-position: -390px,0px;} to {background-position: 0px, 0px;}}*/
+@-webkit-keyframes gif-upvote-animation {
+    from {
+        background-position: -390px, 0px;
+    }
+    to {
+        background-position: 0px, 0px;
+    }
+}
+
+@keyframes gif-upvote-animation {
+    from {
+        background-position: -390px, 0px;
+    }
+    to {
+        background-position: 0px, 0px;
+    }
+}
+
+/* Goes from right to left because that's how the sprite sheet was rendered*/
+/*@-moz-keyframes gif-downvote-animation {from {background-position: -450px,0px;} to {background-position: 0px, 0px;}}*/
+@-webkit-keyframes gif-downvote-animation {
+    from {
+        background-position: -450px, 0px;
+    }
+    to {
+        background-position: 0px, 0px;
+    }
+}
+
+@keyframes gif-downvote-animation {
+    from {
+        background-position: -450px, 0px;
+    }
+    to {
+        background-position: 0px, 0px;
+    }
+}
+
+/* Fixes so that you can see the animated upvote (the upvote girl animation is wider than standard upvote)*/
+.comment .midcol {
+    width: 30px !important;
+}
+
+.link .midcol {
+    width: 30px !important;
+}
+
+.link .midcol {
+    width: 30px !important;
+}
+
+/*Credit goes to http://reddit.com/u/listen2/ for this markup
+Taken from: https://github.com/listen2/reddit_misc/blob/master/stylesheets/buffy.css#L149
+See http://www.reddit.com/r/csshelp/comments/x18bx/howto_fullyfunctional_spoiler_markup_for_mobile/ for information
+
+these spoiler tags degrade gracefully AND work on mobile devices. See http://www.reddit.com/r/csshelp/comments/x18bx/ */
+
+a[href="#s"],
+.md p > a[href="#s"] {
+    text-decoration: none !important;
+    cursor: default;
+    background: #000;
+    color: #fff !important;
+    display: inline-block;
+}
+
+a[href="#s"]::after,
+.md p > a[href="#s"]::after {
+    content: attr(title);
+    color: #000;
+    padding: 0 0.5em;
+    visibility: visible;
+}
+
+a[href="#s"]:hover,
+.md p > a[href="#s"]:hover {
+    color: #fff !important;
+}
+
+a[href="#s"]:hover::after,
+a[href="#s"]:active::after,
+.md p > a[href="#s"]:hover::after,
+.md p > a[href="#s"]:active::after {
+    color: #fff;
+}
+
+/*
+   INLINE PICTURES FOR IMAGEMACRO
+*/
+a[href="/pic"]:after {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+    content: "";
+    /*background: url(%%QRtoShoutboxTTS%%) no-repeat 0 0;*/
+    background-size: 100%;
+}
+
+.morelink::before {
+    transform: rotate(270deg);
+    content: "";
+    position: absolute;
+    background: url(%%peek-sprite-sheet%%); /* This will change to the animation image */
+    width: 30px;
+    height: 30px;
+    left: -31px;
+    overflow: visible;
+    visibility: hidden;
+    transition: visibility .1s .4s;
+
+    /* Peek hide animation */
+    /* Standard CSS3 Animation */
+    animation-name: peek-hide-animation;
+    animation-duration: .4s;
+    animation-timing-function: steps(3);
+    animation-iteration-count: 1;
+    animation-play-state: running;
+
+    /* Webkit CSS3 Animation */
+    -webkit-animation-name: peek-hide-animation;
+    -webkit-animation-duration: .4s;
+    -webkit-animation-timing-function: steps(3);
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-play-state: running;
+
+}
+
+
+.morelink:hover::before {
+    background-position: -450px, 0;
+    visibility: visible;
+
+
+    /*standard CSS3*/
+    animation-name: peek-out-animation, peek-hover-animation;
+    animation-delay: 0s, .7s;
+    animation-duration: .7s, 3s;
+    animation-timing-function: steps(7), steps(4);
+    animation-iteration-count: 1, infinite;
+    animation-play-state: running, running;
+
+    /* Webkit CSS3 annimation */
+    -webkit-animation-name: peek-out-animation, peek-hover-animation;
+    -webkit-animation-delay: 0s, .7s;
+    -webkit-animation-duration: .7s, 3s;
+    -webkit-animation-timing-function: steps(7), steps(4);
+    -webkit-animation-iteration-count: 1, infinite;
+    -webkit-animation-play-state: running, running;
+
+}
+
+.morelink:active::before {
+    background-position: -120px, 0;
+    visibility: visible;
+    /* Peek hide animation */
+    /* Standard CSS3 Animation */
+    animation-name: peek-clicked-animation;
+    animation-duration: .4s;
+    animation-timing-function: steps(4);
+    animation-iteration-count: 1;
+    animation-play-state: running;
+
+    /* Webkit CSS3 Animation */
+    -webkit-animation-name: peek-clicked-animation;
+    -webkit-animation-duration: .4s;
+    -webkit-animation-timing-function: steps(4);
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-play-state: running;
+}
+
+@keyframes peek-out-animation {
+    from {
+        background-position: -450px, 0;
+    }
+    to {
+        background-position: -240px, 0;
+    }
+}
+
+@-webkit-keyframes peek-out-animation {
+    from {
+        background-position: -450px, 0;
+    }
+    to {
+        background-position: -240px, 0;
+    }
+}
+
+
+@keyframes peek-hover-animation {
+    from {
+        background-position: -240px, 0;
+    }
+    to {
+        background-position: -120px, 0;
+    }
+}
+
+@-webkit-keyframes peek-hover-animation {
+    from {
+        background-position: -240px, 0;
+    }
+    to {
+        background-position: -120px, 0;
+    }
+}
+
+
+/* 8 frames, .8s, iteration count: 1 */
+@keyframes peek-hide-animation {
+    from {
+        background-position: -90px, 0;
+    }
+    to {
+        background-position: 0px, 0;
+    }
+}
+
+@-webkit-keyframes peek-hide-animation {
+    from {
+        background-position: -90px, 0;
+    }
+    to {
+        background-position: 0px, 0;
+    }
+}
+
+@keyframes peek-click-animation {
+    from {
+        background-position: -120px, 0;
+    }
+    to {
+        background-position: 0px, 0;
+    }
+}
+
+@-webkit-keyframes peek-click-animation {
+    from {
+        background-position: -120px, 0;
+    }
+    to {
+        background-position: 0px, 0;
+    }
+}

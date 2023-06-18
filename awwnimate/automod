@@ -1,0 +1,69 @@
+#domain: [youtube.com, youtu.be, gfycat.com, streamable.com, imgur.com, openings.moe, cdn.awwni.me, i.redd.it, v.redd.it, catbox.moe]
+#action: approve
+
+---
+
+~domain: [youtube.com, youtu.be, gfycat.com, streamable.com, imgur.com, openings.moe, cdn.awwni.me, i.redd.it, v.redd.it, catbox.moe]
+comment: | 
+    Sorry, your submission has been automatically removed because it's not using one of the approved image hosts. 
+    We currently only accept submissions from the following image hosts:
+    
+    - Catbox.moe
+    - Gfycat
+    - i.redd.it / v.redd.it (Reddit's internal host)
+    - Imgur
+    - Openings.moe
+    - Redditbooru
+    - Streamable
+    - Youtube
+
+    If you think the host should be added to the whitelist, please message the mods!
+action: remove
+modmail: |
+    This post was removed due to not meeting our image hosting guidelines. Please check to make sure the action is appropriate!
+    
+---
+
+# Trolling prevention
+
+type: submission
+author:
+    name: ["No_Gap1082", "External-Rub4470", "bikpinasus", "heysquidink"]
+action: filter
+modmail_subject: Please review this post
+modmail: |
+    Post: "{{title}}" by /u/{{author}}
+
+---
+
+# Repost bots filters
+
+type: submission
+author:
+    comment_karma: "< 10"
+    account_age: "< 1 months"
+action: filter
+action_reason: "New account + Low Karma"
+modmail_subject: Please review a post by a new account with low karma
+modmail: |
+    Post: "{{title}}" by /u/{{author}}
+
+---
+
+type: submission
+author:
+    comment_karma: "< 5"
+action: filter
+action_reason: "Low Karma"
+modmail_subject: Please review a post by an account with low karma
+modmail: |
+    Post: "{{title}}" by /u/{{author}}
+    
+---
+
+type: submission
+reports: 3
+action: filter
+action_reason: "Too many reports on post"
+modmail_subject: "Too many reports"
+modmail: "Post: '{{title}}' by /u/{{author}}"
